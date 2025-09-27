@@ -1,0 +1,65 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #7d5fff;
+}
+
+/* 设置垂直居中
+display flex和alignitems center 
+有时不生效，需要对父级元素进行高度设置，
+因为有时候默认的高度和子级是一样高的，
+即使垂直居中生效了，在页面显示中可能看不出来*/
+.container {
+  display: flex;
+  justify-content: center;
+  /* 水平居中 */
+  align-items: center;
+  /* 垂直居中 */
+  /* 这里要设置一下高度 
+  否则父与子级高度一样，看不出来垂直页面居中*/
+  /* height: 500px;
+  background-color: orange; */
+  height: 100vh;
+}
+
+/* 
+input和button会无法水平对齐，
+将button的position设为absolute就解决了
+非常神奇
+ */
+button {
+  position: absolute;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border: 0;
+  background-color: white;
+}
+
+input {
+  height: 50px;
+  width: 0;
+  border: 0;
+  background-color: white;
+  transition: 1s ease-in-out;
+  font-size: 18px;
+  padding-left: 0px;
+}
+
+.active {
+  width: 200px;
+  padding-left: 10px;
+}
+
+input:focus {
+  outline: none;
+  /* 去除输入时的边框
+   */
+  /* 
+   使用 :focus 伪类来设置输入框聚焦时的样式，
+   例如改变边框颜色或添加阴影。 */
+}
